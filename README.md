@@ -13,8 +13,8 @@ iCook uses two APIs to fetch food and drink recipes. The MealDB API provides acc
 Installation
 - Clone the repository to your local machine.
 - Navigate to the project directory.
-- Run npm install to install the project dependencies.
-- Run npm start to start the development server.
+- Run <npm install/> to install the project dependencies.
+- Run <npm start/> to start the development server.
 
 Dependencies
 - React
