@@ -14,6 +14,8 @@ function Registry() {
   };
 
   const navigate = useNavigate();
+  const regex = /\S+@\S+\.\S+/;
+  const MIN_PASSWORD_LENGTH = 6;
 
   const handleRegistry = (e) => {
     e.preventDefault();
@@ -60,8 +62,12 @@ function Registry() {
         </label>
 
         <button
-          type="submit" onClick={handleRegistry}>Registry</button>
-
+          type="submit"
+          disabled={ !regex.test(email) || password.length < MIN_PASSWORD_LENGTH }
+          onClick={handleRegistry}
+          >
+          Registry
+        </button>
 
       </form>
     </div>
