@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { useNavigate } from "react-router-dom";
-// import { fetchAllFoods } from "../api/foodApi";
+import { Link, useNavigate } from "react-router-dom";
+
 
 function Home() {
 
@@ -16,8 +16,10 @@ function Home() {
   return (
     <div>
       <h1>iCook</h1>
+      <p>What are we cooking today?</p>
 
-
+      <Link to="/foods">Foods</Link> or <Link to="/drinks">Drinks</Link>
+      
     </div>
   )
 }
