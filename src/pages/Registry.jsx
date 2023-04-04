@@ -3,12 +3,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Registry() {
-  const [name, setName] = useState('');
+  const [username, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const userRegistry = {
-    name,
+  const user = {
+    name: username,
     email,
     password
   };
@@ -19,8 +19,8 @@ function Registry() {
 
   const handleRegistry = (e) => {
     e.preventDefault();
-    const userRegistryJSON = JSON.stringify(userRegistry);
-    localStorage.setItem('userRegistry', userRegistryJSON);
+    const userJSON = JSON.stringify(user);
+    localStorage.setItem('user', userJSON);
 
     navigate('/login');
   }
@@ -35,7 +35,7 @@ function Registry() {
             type="text"
             name="name"
             id="name"
-            value={name}
+            value={username}
             onChange={(e) => setName(e.target.value)}
           />
         </label>
