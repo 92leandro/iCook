@@ -1,26 +1,25 @@
 import React from 'react';
+import "../styles/food.css"
 
-function FoodCard({ cards }) {
+
+function FoodCard({ allMeals }) {
   return (
-    <div className="foodsGrid">
-      {
-        cards.length > 0 && cards.map(({ strMealThumb, strMeal }) => (
-          <button
-            className="foodsBtn"
-            key={ strMeal }
-            
-            type="button"
-          >
+    <div>
+      <h2>All Meals</h2>
+      <ul>
+        {allMeals.map((meal) => (
+          <li key={meal.idMeal}>
             <img
-              className="foodsImg"
-              src={ strMealThumb }
-              alt={ strMeal }
+              className="food-img"
+              src={meal.strMealThumb}
+              alt={meal.strMeal}
             />
-          </button>
-        ))
-      }
+            <span>{meal.strMeal}</span>
+          </li>
+        ))}
+      </ul>
     </div>
-  )
-};
+  );
+}
 
 export default FoodCard;
